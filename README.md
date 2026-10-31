@@ -61,10 +61,14 @@ cd BootEMS/EMS
 ```
 
 1. Create the database: `CREATE DATABASE bootems;`
-2. Set `spring.datasource.username` and `spring.datasource.password` in `src/main/resources/application.properties`.
+2. Set the database credentials as environment variables (`application.properties` reads `${DB_USERNAME:root}` and `${DB_PASSWORD:}`):
+   ```bash
+   export DB_USERNAME=root
+   export DB_PASSWORD=your_mysql_password
+   ```
 3. Run `mvn spring-boot:run` and open `http://localhost:8080`.
 
-The admin login is defined in `EmployeeController`; change it before any real use.
+The admin login defined in `EmployeeController` is a demo-only default for local testing; change it before any real use.
 
 ## Author
 
